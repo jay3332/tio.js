@@ -13,6 +13,7 @@ module.exports = async function tio(language, code, input="") {
             method: "POST",
             body: compressed
         });
+        console.log(res);
         return await res.text();
     });
     return resp;
