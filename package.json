@@ -1,0 +1,25 @@
+{
+  "name": "tio.js",
+  "version": "1.0.0",
+  "description": "Tio.js is a simple API wrapper around the TryItOnline API.",
+  "main": "tio.js/index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "snappy": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jay3332/tio.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jay3332/tio.js/issues"
+  },
+  "homepage": "https://github.com/jay3332/tio.js#readme"
+}
