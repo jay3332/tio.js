@@ -4,8 +4,7 @@
   "description": "Tio.js is a simple API wrapper around the TryItOnline API.",
   "main": "tio.js/index.js",
   "dependencies": {
-    "node-fetch": "^2.6.1",
-    "snappy": "^1.0.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {},
   "scripts": {

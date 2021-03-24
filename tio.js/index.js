@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const { compress } = require("snappy");
+const { inflate } = require("zlib");
 const BASE = 'https://tio.run/cgi-bin/run/api/';
 
 encode(language, text, input) {
@@ -8,12 +8,10 @@ encode(language, text, input) {
 
 module.exports = async function tio(language, code, input) {
     const encoded = encode(language, code, input); 
-    const res = compress(encoded, function(err, compressed) {
-        const response = await fetch(BASE, {
-            method: "POST",
-            body: compressed
-        });
-        return await body.text();
+    const compressed = await inflate(encoded);
+    const res = await fetch(BASE, {
+        method: "POST",
+        body: compressed
     });
-    return res;
+    return await res.text();
 }
