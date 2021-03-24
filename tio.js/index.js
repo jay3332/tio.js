@@ -8,10 +8,12 @@ function encode(language, text, input) {
 
 module.exports = async function tio(language, code, input="") {
     const encoded = encode(language, code, input); 
-    const compressed = await inflate(encoded);
-    const res = await fetch(BASE, {
-        method: "POST",
-        body: compressed
+    const resp = await inflate(encoded, async (error, compressed) => {
+        const res = await fetch(BASE, {
+            method: "POST",
+            body: compressed
+        });
+        return await res.text();
     });
-    return await res.text();
+    return resp;
 }
